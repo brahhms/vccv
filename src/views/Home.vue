@@ -16,25 +16,40 @@
               <v-sheet min-height="70vh" rounded="lg" class="px-12 pt-8">
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <b>Vendedor</b>
-                  <v-text-field
-                    v-model="cv.vendedor.nombres"
+
+                  <v-combobox
+                    v-model="cv.vendedor"
+                    :items="personas"
+                    item-text="nombreCompleto"
+                    required
                     :rules="nameRules"
                     label="Nombre Completo"
-                    required
-                  ></v-text-field>
+                    return-object
+                  >
+                  </v-combobox>
 
-                  <v-select
+                  <v-autocomplete
                     v-model="cv.vendedor.domicilio"
                     :items="municipios"
+                    item-text="nombre"
+                    required
                     :rules="[(v) => !!v || 'Item is required']"
                     label="Domicilio"
-                    required
-                  ></v-select>
+                    return-object
+                  >
+                    <template v-slot:selection="data">
+                      {{ data.item.nombre }}
+                    </template>
+                    <template v-slot:item="data">
+                      {{ data.item.nombre }}
+                    </template>
+                  </v-autocomplete>
 
                   <v-text-field
                     v-model="cv.vendedor.domicilio.departamento.nombre"
                     label="Departamento"
                     required
+                    disabled
                   ></v-text-field>
                 </v-form>
               </v-sheet>
@@ -50,28 +65,40 @@
               <v-sheet min-height="70vh" rounded="lg" class="px-12 pt-8">
                 <v-form ref="form" v-model="valid" lazy-validation>
                   <b>Comprador</b>
-                  <v-text-field
-                    v-model="cv.comprador.nombres"
+
+                  <v-combobox
+                    v-model="cv.comprador"
+                    :items="personas"
+                    item-text="nombreCompleto"
+                    required
                     :rules="nameRules"
                     label="Nombre Completo"
-                    required
-                  ></v-text-field>
+                    return-object
+                  >
+                  </v-combobox>
 
-                  <v-select
+                  <v-autocomplete
                     v-model="cv.comprador.domicilio"
                     :items="municipios"
+                    item-text="nombre"
+                    required
                     :rules="[(v) => !!v || 'Item is required']"
                     label="Domicilio"
-                    required
-                  ></v-select>
-
+                    return-object
+                  >
+                    <template v-slot:selection="data">
+                      {{ data.item.nombre }}
+                    </template>
+                    <template v-slot:item="data">
+                      {{ data.item.nombre }}
+                    </template>
+                  </v-autocomplete>
                   <v-text-field
                     v-model="cv.comprador.domicilio.departamento.nombre"
                     label="Departamento"
                     required
+                    disabled
                   ></v-text-field>
-
-               
                 </v-form>
               </v-sheet>
             </v-card>
@@ -109,28 +136,27 @@
 
 
 <script>
+import { mapState } from "vuex";
 export default {
   data: () => ({
     cv: {
       vendedor: {
-        nombres: "JUAN ANTONIO",
-        apellidos: "GUEVARA MARTINEZ",
-        dui: "00176095-4",
+        nombreCompleto: "",
+        dui: "",
         domicilio: {
-          nombre: "El Porvenir",
+          nombre: "",
           departamento: {
-            nombre: "Santa Ana",
+            nombre: null,
           },
         },
       },
       comprador: {
-        nombres: "JUAN ANTONIO",
-        apellidos: "GUEVARA MARTINEZ",
-        dui: "00176095-4",
+        nombreCompleto: "",
+        dui: "",
         domicilio: {
-          nombre: "El Porvenir",
+          nombre: "",
           departamento: {
-            nombre: "Santa Ana",
+            nombre: null,
           },
         },
       },
@@ -139,15 +165,22 @@ export default {
     e1: 1,
     steps: 2,
     valid: true,
-    name: "",
     nameRules: [
       (v) => !!v || "Name is required",
-      (v) => (v && v.length <= 50) || "Name must be less than 10 characters",
+      (v) =>
+        (v.nombreCompleto && v.nombreCompleto.length <= 150) ||
+        "Name must be less than 150 characters",
     ],
-    select: null,
-    municipios: [
-      { nombre: "El Porvenir", departamento: { nombre: "Santa Ana" } },
-    ],
+    personaDefault: {
+      nombreCompleto: "prueba",
+      dui: "",
+      domicilio: {
+        nombre: "",
+        departamento: {
+          nombre: "",
+        },
+      },
+    },
   }),
   watch: {
     steps(val) {
@@ -155,6 +188,23 @@ export default {
         this.e1 = val;
       }
     },
+    "cv.vendedor"(val) {
+      if (val == null || val == undefined) {
+        this.cv.vendedor = this.personaDefault;
+      } else if (
+        val.nombreCompleto == undefined ||
+        val.nombreCompleto == null
+      ) {
+        this.personaDefault.nombreCompleto = val;
+        this.cv.vendedor = this.personaDefault;
+      }
+
+      console.log(this.cv.vendedor.nombreCompleto);
+    },
+  },
+
+  computed: {
+    ...mapState(["personas", "municipios"]),
   },
 
   methods: {
