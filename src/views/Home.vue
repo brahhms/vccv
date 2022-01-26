@@ -28,6 +28,12 @@
                   >
                   </v-combobox>
 
+                  <v-text-field
+                    v-model="cv.vendedor.dui"
+                    label="DUI"
+                    required
+                  ></v-text-field>
+
                   <v-autocomplete
                     v-model="cv.vendedor.domicilio"
                     :items="municipios"
@@ -77,6 +83,12 @@
                   >
                   </v-combobox>
 
+                  <v-text-field
+                    v-model="cv.comprador.dui"
+                    label="DUI"
+                    required
+                  ></v-text-field>
+
                   <v-autocomplete
                     v-model="cv.comprador.domicilio"
                     :items="municipios"
@@ -93,6 +105,7 @@
                       {{ data.item.nombre }}
                     </template>
                   </v-autocomplete>
+
                   <v-text-field
                     v-model="cv.comprador.domicilio.departamento.nombre"
                     label="Departamento"
@@ -103,28 +116,80 @@
               </v-sheet>
             </v-card>
 
-            <v-btn color="primary" @click="nextStep(3)"> Continue </v-btn>
+            <v-btn color="primary" @click="nextStep(2)"> Continue </v-btn>
 
             <v-btn text> Cancel </v-btn>
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-card class="mb-12" color="grey lighten-1" min-height="70vh">
-              <v-sheet min-height="70vh" rounded="lg" class="px-12 pt-8">
-                <v-form ref="form" v-model="valid" lazy-validation>
-                  <b>CERTIFICADO DE CARTA DE VENTA</b>
-                  Don {{ cv.vendedor.nombres }} {{ cv.vendedor.apellidos }}.
-                  DUI: {{ cv.vendedor.dui }}. mayor de edad, del domicilio de
-                  {{ cv.vendedor.domicilio.nombre }}
-                  Departamento de
-                  {{ cv.vendedor.domicilio.departamento.nombre }}
-                  ,ha dado en venta por la suma de {{ cv.monto }} Al
-                  {{ cv.comprador.nombres }}
-                </v-form>
+            <v-card
+              class="mb-12 py-4"
+              color="grey lighten-1"
+              min-height="70vh"
+            >
+              <v-sheet
+                height="792"
+                width="612"
+                elevation="5"
+                class="px-4 py-4 contenedor"
+                style="text-align: justify"
+                color="white" 
+              >
+                <div class="sello oficinaCentral">sello oficina central</div>
+                <div class="contenido">
+                  <v-row>
+                    <v-col class="text-center">
+                      <b>CERTIFICADO DE CARTA DE VENTA</b>
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col>
+                      Don:
+                      <b>
+                        {{ cv.vendedor.nombreCompleto }}. DUI:
+                        {{ cv.vendedor.dui }}.
+                      </b>
+                      mayor de edad, del domicilio de
+                      <b>
+                        {{ cv.vendedor.domicilio.nombre }}
+                      </b>
+                      Departamento de
+                      <b>
+                        {{ cv.vendedor.domicilio.departamento.nombre }}
+                      </b>
+                      ,ha dado en venta por la suma de
+                      <b>
+                        {{ monto }}
+                      </b>
+                      Al Sr.
+                      <b>
+                        {{ cv.comprador.nombreCompleto }}. DUI:
+                        {{ cv.comprador.dui }}.
+                      </b>
+                      mayor de edad, vecino de
+                      <b>
+                        {{ cv.comprador.domicilio.nombre }}
+                      </b>
+                      Departamento de
+                      <b>
+                        {{ cv.comprador.domicilio.departamento.nombre }}
+                      </b>
+                      , el o__ semoviente__expresado__ a continuacion
+                      <b>
+                        {{ cv.semoviente.cantidad }}-{{
+                          cv.semoviente.descripcion
+                        }}
+                      </b>
+                    </v-col>
+                  </v-row>
+                </div>
+                <div class="sello alcaldia">sello alcaldia</div>
+                <div class="sello">exento</div>
+                <div class="pie-pagina">fierro</div>
               </v-sheet>
             </v-card>
 
-            <v-btn color="primary" @click="nextStep(n)"> Continue </v-btn>
+            <v-btn color="primary" @click="nextStep(3)"> Continue </v-btn>
 
             <v-btn text> Cancel </v-btn>
           </v-stepper-content>
@@ -136,7 +201,9 @@
 
 
 <script>
+import numeros from "../store/numeros.js";
 import { mapState } from "vuex";
+
 export default {
   data: () => ({
     cv: {
@@ -146,7 +213,7 @@ export default {
         domicilio: {
           nombre: "",
           departamento: {
-            nombre: null,
+            nombre: "",
           },
         },
       },
@@ -156,21 +223,21 @@ export default {
         domicilio: {
           nombre: "",
           departamento: {
-            nombre: null,
+            nombre: "",
           },
         },
       },
-      monto: 1700,
+      semoviente: {
+        valor: 1800,
+        cantidad: 1,
+        descripcion:
+          'Toro prieto 2-parches Blancos en la Pansa y Cola Blanca, Comp. seg. ant. serie "J" Nº 599668, Exp. en Candelaria de la Frontera el 5 de Julio de 2021. Que se agrega.- ',
+      },
     },
     e1: 1,
     steps: 2,
     valid: true,
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) =>
-        (v.nombreCompleto && v.nombreCompleto.length <= 150) ||
-        "Name must be less than 150 characters",
-    ],
+    nameRules: [(v) => !!v || "Name is required"],
     personaDefault: {
       nombreCompleto: "prueba",
       dui: "",
@@ -190,26 +257,48 @@ export default {
     },
     "cv.vendedor"(val) {
       if (val == null || val == undefined) {
-        this.cv.vendedor = this.personaDefault;
-      } else if (
-        val.nombreCompleto == undefined ||
-        val.nombreCompleto == null
-      ) {
+        this.personaDefault.nombreCompleto = null;
+        val = this.personaDefault;
+        this.cv.vendedor = val;
+      } else if (typeof val == "string") {
         this.personaDefault.nombreCompleto = val;
-        this.cv.vendedor = this.personaDefault;
+        val = this.personaDefault;
+        console.log(
+          "guardar nueva persona{nombre:" +
+            this.personaDefault.nombreCompleto +
+            ", }"
+        );
+        this.cv.vendedor = val;
       }
-
-      console.log(this.cv.vendedor.nombreCompleto);
+    },
+    "cv.comprador"(val) {
+      if (val == null || val == undefined) {
+        this.personaDefault.nombreCompleto = null;
+        val = this.personaDefault;
+        this.cv.comprador = val;
+      } else if (typeof val == "string") {
+        this.personaDefault.nombreCompleto = val;
+        val = this.personaDefault;
+        console.log(
+          "guardar nueva persona{nombre:" +
+            this.personaDefault.nombreCompleto +
+            ", }"
+        );
+        this.cv.comprador = val;
+      }
     },
   },
 
   computed: {
     ...mapState(["personas", "municipios"]),
+    monto() {
+      return numeros.aLetras(this.cv.semoviente.valor);
+    },
   },
 
   methods: {
     nextStep(n) {
-      if (n === this.steps) {
+      if (n === 3) {
         this.e1 = 1;
       } else {
         this.e1 = n + 1;
@@ -218,3 +307,30 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 200px 200px 150px;
+  margin: 0px auto;
+  border-radius: 0px !important;
+}
+
+.contenedor > div {
+  padding: 20px;
+}
+
+.contenido {
+  grid-row: 1/3;
+  grid-column: 2 / 4;
+}
+
+.sello {
+  border-style: solid;
+  border-width: 1px;
+}
+</style>
+
+
