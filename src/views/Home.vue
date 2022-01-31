@@ -56,6 +56,11 @@
                   required
                   disabled
                 ></v-text-field>
+
+                <v-radio-group v-model="cv.vendedor.sexo" column>
+                  <v-radio label="Masculino" color="blue" value="M"></v-radio>
+                  <v-radio label="Femenino" color="pink" value="F"></v-radio>
+                </v-radio-group>
               </v-form>
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
@@ -110,6 +115,11 @@
                   required
                   disabled
                 ></v-text-field>
+
+                <v-radio-group v-model="cv.comprador.sexo" column>
+                  <v-radio label="Masculino" color="blue" value="M"></v-radio>
+                  <v-radio label="Femenino" color="pink" value="F"></v-radio>
+                </v-radio-group>
               </v-form>
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
@@ -126,7 +136,7 @@
                 width="590"
                 elevation="5"
                 class="px-3 contenedor"
-                color="white"
+                color="#FFFDF7"
               >
                 <div class="encabezado">
                   <v-row>
@@ -136,7 +146,7 @@
                         contain
                         src="../assets/logo.svg"
                         transition="scale-transition"
-                        width="30"
+                        width="100%"
                       ></v-img>
                     </v-col>
                     <v-col>
@@ -145,56 +155,92 @@
                     </v-col>
                   </v-row>
                 </div>
-                <div class="sello oficinaCentral">sello oficina central</div>
+                <div class="sello oficinaCentral">
+                  Sello de la Oficina Central
+                </div>
                 <div class="contenido">
                   <v-row>
-                    <v-col cols="12" class="text-center pb-1">
-                      <b class="f-11">CERTIFICADO DE CARTA DE VENTA</b>
+                    <v-col cols="12" class="text-center pb-0">
+                      <b class="titulo-contenido">
+                        CERTIFICADO DE CARTA DE VENTA
+                      </b>
                     </v-col>
 
                     <v-col class="pt-0">
-                      Don:
+                      DON:
                       <b>
                         {{ cv.vendedor.nombreCompleto }}. DUI:
-                        {{ cv.vendedor.dui }}.
+                        {{ cv.vendedor.dui }}.-
                       </b>
                       mayor de edad, del domicilio de
                       <b>
                         {{ cv.vendedor.domicilio.nombre }}
                       </b>
+                      <br />
                       Departamento de
                       <b>
                         {{ cv.vendedor.domicilio.departamento.nombre }}
                       </b>
-                      ,ha dado en venta por la suma de
+                      ,ha dado en venta por la <br />
+                      suma de
                       <b>
                         {{ monto }}
                       </b>
+                      <br />
                       Al Sr.
                       <b>
                         {{ cv.comprador.nombreCompleto }}. DUI:
-                        {{ cv.comprador.dui }}.
+                        {{ cv.comprador.dui }}.-
                       </b>
-                      mayor de edad, vecino de
+                      mayor de <br />
+                      edad, vecino de
                       <b>
                         {{ cv.comprador.domicilio.nombre }}
                       </b>
+                      <br />
                       Departamento de
                       <b>
                         {{ cv.comprador.domicilio.departamento.nombre }}
                       </b>
-                      , el o__ semoviente__expresado__ a continuacion
+                      , el o______________ semoviente____________ <br />
+                      expresado_________ a continuacion
                       <b>
                         {{ cv.semoviente.cantidad }}-{{
                           cv.semoviente.descripcion
                         }}
                       </b>
+                      <br />
+                      semoviente________que
+                      esta_______herrado________venteado______con el
+                      <br />
+                      fierro Del Ant._______ No.____0000014245.-
+                      <br />
+                      Del departamento de Santa Ana
                     </v-col>
                   </v-row>
                 </div>
-                <div class="sello alcaldia">sello alcaldia</div>
-                <div class="sello">exento</div>
-                <div class="pie-pagina">fierro</div>
+                <div class="sello alcaldia">Sello de la Alcaldia</div>
+                <div class="sello">EXENTO</div>
+                <div class="pie-pagina">
+                  <v-row>
+                    <v-col>
+                      <div class="fierro">FIGURA DEL FIERRO</div>
+                      Para seguridad del comprador, se le extiende la presente
+                      en la Alcaldia Municipal de Candelaria de la Frontera a 10
+                      de enero de 2021.
+                    </v-col>
+                  </v-row>
+                  <v-row>
+                    <v-col class="text-center firma">
+                      <hr />
+                      Firma del Comprador
+                    </v-col>
+                    <v-col class="text-center firma">
+                      <hr />
+                      Firma del Vendedor
+                    </v-col>
+                  </v-row>
+                </div>
               </v-sheet>
               <v-row class="mt-4 pr-8">
                 <v-spacer></v-spacer>
@@ -220,6 +266,7 @@ export default {
       vendedor: {
         nombreCompleto: "",
         dui: "",
+        sexo:"M",
         domicilio: {
           nombre: "",
           departamento: {
@@ -230,6 +277,7 @@ export default {
       comprador: {
         nombreCompleto: "",
         dui: "",
+        sexo:"M",
         domicilio: {
           nombre: "",
           departamento: {
@@ -243,6 +291,7 @@ export default {
         descripcion:
           'Toro prieto 2-parches Blancos en la Pansa y Cola Blanca, Comp. seg. ant. serie "J" Nº 599668, Exp. en Candelaria de la Frontera el 5 de Julio de 2021. Que se agrega.- ',
       },
+      fecha: "25/12/2022",
     },
     e1: 1,
     steps: 2,
@@ -251,6 +300,7 @@ export default {
     personaDefault: {
       nombreCompleto: "prueba",
       dui: "",
+      sexo:"M",
       domicilio: {
         nombre: "",
         departamento: {
@@ -319,26 +369,92 @@ export default {
 </script>
 
 <style scoped>
+.firma {
+  margin: 0 auto;
+
+  width: 50px !important;
+  margin-top: 50px;
+}
+
+.fierro {
+  text-align: center;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 1px;
+
+  height: 110px;
+  width: 360px;
+}
+
 .contenedor {
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 50px 110px 110px 150px;
   margin: 0px auto;
   border-radius: 0px !important;
+
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 80px 175px 175px 280px;
   padding: 10px;
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .encabezado {
-  font-size: 15px;
+  grid-row: 1;
+  grid-column: 1 / 4;
   font-family: "Times New Roman", Times, serif;
+
+  padding-left: 13px;
+  font-size: 14px !important;
 }
 
-@media only screen and (max-width: 600px) {
+.encabezado > div {
+  padding: 0px !important;
+}
+
+.contenido {
+  grid-row: 2/4;
+  grid-column: 2 / 4;
+  padding: 0px 5px !important;
+}
+
+.contenido,
+.pie-pagina {
+  padding: 0px 5px !important;
+  line-height: 2em;
+  text-align: justify !important;
+}
+
+.titulo-contenido {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px !important;
+}
+
+.sello {
+  border-style: solid;
+  border-width: 1px;
+  text-align: center;
+
+  font-size: 7px !important;
+}
+
+@media only screen and (max-width: 670px) {
+  .fierro {
+    height: 70px;
+    width: 180px;
+  }
+
+  .firma {
+    width: 50px;
+    margin-top: 10px;
+  }
+
   .contenedor {
     width: 340px !important;
     height: 440px !important;
-    font-size: 8px;
+
+    grid-template-columns: 2.5fr 8.5fr;
+    grid-template-rows: 40px 100px 100px 160px;
+    padding: 10px;
+    font-size: 7px;
   }
 
   .encabezado {
@@ -348,26 +464,14 @@ export default {
   .container {
     padding: 0px !important;
   }
-}
 
-.contenido {
-  grid-row: 2/4;
-  grid-column: 2 / 4;
-  padding: 0px 5px;
-  line-height: 1.5em;
-  text-align: justify;
-}
+  .titulo-contenido {
+    font-size: 12px !important;
+  }
 
-.encabezado {
-  grid-row: 1;
-  grid-column: 1 / 4;
-  font-family: "Times New Roman", Times, serif;
-  padding-left: 14px;
-}
-
-.sello {
-  border-style: solid;
-  border-width: 1px;
+  .sello {
+    font-size: 5px !important;
+  }
 }
 </style>
 

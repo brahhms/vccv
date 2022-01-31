@@ -9,6 +9,7 @@ export default new Vuex.Store({
       {
         nombreCompleto: "JUAN ANTONIO GUEVARA MARTINEZ",
         dui: "00176095-4",
+        sexo:"M",
         domicilio: {
           nombre: "El Porvenir",
           departamento: {
@@ -19,6 +20,7 @@ export default new Vuex.Store({
       {
         nombreCompleto: "LUIS MANUEL GRANADINO LEON",
         dui: "06011251-6",
+        sexo:"M",
         domicilio: {
           nombre: "Santiago de la Frontera",
           departamento: {
