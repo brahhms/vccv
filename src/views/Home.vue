@@ -7,64 +7,17 @@
           <v-divider></v-divider>
           <v-stepper-step step="2" editable> Comprador </v-stepper-step>
           <v-divider></v-divider>
-          <v-stepper-step step="3" editable> Certificado </v-stepper-step>
+          <v-stepper-step step="3" editable> Semoviente </v-stepper-step>
+          <v-divider></v-divider>
+          <v-stepper-step step="4" editable> Certificado </v-stepper-step>
         </v-stepper-header>
 
         <v-stepper-items>
           <v-stepper-content step="1">
             <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
-              <v-form ref="form" v-model="valid" lazy-validation>
-                <b>Vendedor</b>
-
-                <v-combobox
-                  v-model="cv.vendedor"
-                  :items="personas"
-                  item-text="nombreCompleto"
-                  required
-                  :rules="nameRules"
-                  label="Nombre Completo"
-                  return-object
-                >
-                </v-combobox>
-
-                <v-text-field
-                  v-model="cv.vendedor.dui"
-                  label="DUI"
-                  required
-                ></v-text-field>
-
-                <v-autocomplete
-                  v-model="cv.vendedor.domicilio"
-                  :items="municipios"
-                  item-text="nombre"
-                  required
-                  :rules="[(v) => !!v || 'Item is required']"
-                  label="Domicilio"
-                  return-object
-                >
-                  <template v-slot:selection="data">
-                    {{ data.item.nombre }}
-                  </template>
-                  <template v-slot:item="data">
-                    {{ data.item.nombre }}
-                  </template>
-                </v-autocomplete>
-
-                <v-text-field
-                  v-model="cv.vendedor.domicilio.departamento.nombre"
-                  label="Departamento"
-                  required
-                  disabled
-                ></v-text-field>
-
-                <v-radio-group v-model="cv.vendedor.sexo" column>
-                  <v-radio label="Masculino" color="blue" value="M"></v-radio>
-                  <v-radio label="Femenino" color="pink" value="F"></v-radio>
-                </v-radio-group>
-              </v-form>
+              <form-persona vendedor rol="Vendedor"></form-persona>
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
-
                 <v-btn color="primary" @click="nextStep(1)"> Continuar </v-btn>
               </v-row>
             </v-sheet>
@@ -72,55 +25,7 @@
 
           <v-stepper-content step="2">
             <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
-              <v-form ref="form" v-model="valid" lazy-validation>
-                <b>Comprador</b>
-
-                <v-combobox
-                  v-model="cv.comprador"
-                  :items="personas"
-                  item-text="nombreCompleto"
-                  required
-                  :rules="nameRules"
-                  label="Nombre Completo"
-                  return-object
-                >
-                </v-combobox>
-
-                <v-text-field
-                  v-model="cv.comprador.dui"
-                  label="DUI"
-                  required
-                ></v-text-field>
-
-                <v-autocomplete
-                  v-model="cv.comprador.domicilio"
-                  :items="municipios"
-                  item-text="nombre"
-                  required
-                  :rules="[(v) => !!v || 'Item is required']"
-                  label="Domicilio"
-                  return-object
-                >
-                  <template v-slot:selection="data">
-                    {{ data.item.nombre }}
-                  </template>
-                  <template v-slot:item="data">
-                    {{ data.item.nombre }}
-                  </template>
-                </v-autocomplete>
-
-                <v-text-field
-                  v-model="cv.comprador.domicilio.departamento.nombre"
-                  label="Departamento"
-                  required
-                  disabled
-                ></v-text-field>
-
-                <v-radio-group v-model="cv.comprador.sexo" column>
-                  <v-radio label="Masculino" color="blue" value="M"></v-radio>
-                  <v-radio label="Femenino" color="pink" value="F"></v-radio>
-                </v-radio-group>
-              </v-form>
+              <form-persona comprador rol="Comprador"></form-persona>
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
                 <v-btn text @click="nextStep(3)"> Regresar </v-btn>
@@ -130,6 +35,46 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
+            <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
+              <v-form ref="form">
+
+                <v-text-field
+                  v-model="cv.semoviente.cantidad"
+                  label="Cantidad"
+                  required
+                ></v-text-field>
+
+                <v-text-field
+                  v-model="cv.semoviente.valor"
+                  label="Valor"
+                  required
+                ></v-text-field>
+
+                <v-textarea
+                rows="4"
+                  v-model="cv.semoviente.descripcion"
+                  label="Descripcion"
+                ></v-textarea>
+
+                <v-file-input
+                  prepend-icon="mdi-camera"
+                  label="Fierro"
+                  v-model="cv.semoviente.img"
+                  accept="image/*"
+                  capture="camera" 
+                  @change="onFileChange"
+                ></v-file-input>
+              </v-form>
+
+              <v-row class="mt-6">
+                <v-spacer></v-spacer>
+                <v-btn text> Regresar </v-btn>
+                <v-btn color="primary" @click="nextStep(3)"> Continuar </v-btn>
+              </v-row>
+            </v-sheet>
+          </v-stepper-content>
+
+          <v-stepper-content step="4">
             <v-card class="py-2" min-height="80vh">
               <v-sheet
                 height="764"
@@ -167,7 +112,8 @@
                     </v-col>
 
                     <v-col class="pt-0">
-                      DON:
+                      <span v-if="cv.vendedor.sexo == 'M'">DON:</span>
+                      <span v-else>DOÑA:</span>
                       <b>
                         {{ cv.vendedor.nombreCompleto }}. DUI:
                         {{ cv.vendedor.dui }}.-
@@ -187,7 +133,8 @@
                         {{ monto }}
                       </b>
                       <br />
-                      Al Sr.
+                      <span v-if="cv.comprador.sexo == 'M'">Al Sr.</span>
+                      <span v-else>A la Sra.</span>
                       <b>
                         {{ cv.comprador.nombreCompleto }}. DUI:
                         {{ cv.comprador.dui }}.-
@@ -202,16 +149,20 @@
                       <b>
                         {{ cv.comprador.domicilio.departamento.nombre }}
                       </b>
-                      , el o______________ semoviente____________ <br />
-                      expresado_________ a continuacion
+                      , el
+                      <span v-if="cv.semoviente.cantidad > 1">o los</span>
+                      semoviente<span v-if="cv.semoviente.cantidad > 1">s</span
+                      ><br />
+                      expresado<span v-if="cv.semoviente.cantidad > 1">s</span>
+                      a continuacion
                       <b>
                         {{ cv.semoviente.cantidad }}-{{
                           cv.semoviente.descripcion
                         }}
                       </b>
                       <br />
-                      semoviente________que
-                      esta_______herrado________venteado______con el
+                      semoviente<span v-if="cv.semoviente.cantidad > 1">s</span> que
+                      esta<span v-if="cv.semoviente.cantidad > 1">n</span> herrado________venteado______con el
                       <br />
                       fierro Del Ant._______ No.____0000014245.-
                       <br />
@@ -224,7 +175,16 @@
                 <div class="pie-pagina">
                   <v-row>
                     <v-col>
-                      <div class="fierro">FIGURA DEL FIERRO</div>
+                      <div class="fierro">
+                        FIGURA DEL FIERRO
+                        <v-img
+                          alt="Logo gobierno"
+                          contain
+                          src="cv.semoviente.img"
+                          transition="scale-transition"
+                          width="30%"
+                        ></v-img>
+                      </div>
                       Para seguridad del comprador, se le extiende la presente
                       en la Alcaldia Municipal de Candelaria de la Frontera a 10
                       de enero de 2021.
@@ -244,8 +204,8 @@
               </v-sheet>
               <v-row class="mt-4 pr-8">
                 <v-spacer></v-spacer>
-                <v-btn text @click="nextStep(3)"> Regresar </v-btn>
-                <v-btn color="primary" @click="nextStep(3)"> OK </v-btn>
+                <v-btn text @click="nextStep(4)"> Regresar </v-btn>
+                <v-btn color="primary" @click="nextStep(4)"> OK </v-btn>
               </v-row>
             </v-card>
           </v-stepper-content>
@@ -258,56 +218,16 @@
 
 <script>
 import numeros from "../store/numeros.js";
-import { mapState } from "vuex";
+import FormPersona from "../components/FormPersona";
+import { mapGetters } from "vuex";
 
 export default {
+  components: {
+    FormPersona,
+  },
   data: () => ({
-    cv: {
-      vendedor: {
-        nombreCompleto: "",
-        dui: "",
-        sexo:"M",
-        domicilio: {
-          nombre: "",
-          departamento: {
-            nombre: "",
-          },
-        },
-      },
-      comprador: {
-        nombreCompleto: "",
-        dui: "",
-        sexo:"M",
-        domicilio: {
-          nombre: "",
-          departamento: {
-            nombre: "",
-          },
-        },
-      },
-      semoviente: {
-        valor: 1800,
-        cantidad: 1,
-        descripcion:
-          'Toro prieto 2-parches Blancos en la Pansa y Cola Blanca, Comp. seg. ant. serie "J" Nº 599668, Exp. en Candelaria de la Frontera el 5 de Julio de 2021. Que se agrega.- ',
-      },
-      fecha: "25/12/2022",
-    },
     e1: 1,
     steps: 2,
-    valid: true,
-    nameRules: [(v) => !!v || "Name is required"],
-    personaDefault: {
-      nombreCompleto: "prueba",
-      dui: "",
-      sexo:"M",
-      domicilio: {
-        nombre: "",
-        departamento: {
-          nombre: "",
-        },
-      },
-    },
   }),
   watch: {
     steps(val) {
@@ -350,7 +270,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["personas", "municipios"]),
+    ...mapGetters(["cv"]),
     monto() {
       return numeros.aLetras(this.cv.semoviente.valor);
     },
@@ -358,7 +278,7 @@ export default {
 
   methods: {
     nextStep(n) {
-      if (n === 3) {
+      if (n === 4) {
         this.e1 = 1;
       } else {
         this.e1 = n + 1;
@@ -459,6 +379,7 @@ export default {
 
   .encabezado {
     font-size: 8px !important;
+      padding-left: 22px;
   }
 
   .container {
