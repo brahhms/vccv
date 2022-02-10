@@ -1,5 +1,5 @@
 <template>
-  <v-form ref="form">
+  <v-form ref="form" v-model="model.isValid">
     <b v-if="vendedor">Vendedor</b>
     <b v-else>Comprador</b>
 
@@ -58,23 +58,21 @@ export default {
 
   data: () => ({
     nameRules: [(v) => !!v || "Name is required"],
-    personaDefault: {
-      nombreCompleto: "",
-      dui: "",
-      sexo: null,
-      domicilio: {
-        nombre: "",
-        departamento: {
-          nombre: "",
-        },
-      },
-    },
   }),
   computed: {
     ...mapState(["personas", "municipios"]),
-    ...mapGetters(["nuevoComprador", "nuevoVendedor"]),
+    ...mapGetters(["nuevoComprador", "nuevoVendedor", "personaDefault"]),
     model: {
       set(persona) {
+        if (!persona) {
+          persona = Object.assign({}, this.personaDefault);
+        } else {
+          if (typeof persona != "object") {
+            let nombreCompleto = persona;
+            persona = Object.assign({}, this.personaDefault);
+            persona.nombreCompleto = nombreCompleto;
+          }
+        }
         if (this.comprador) {
           this.setComprador(persona);
         } else if (this.vendedor) {
@@ -96,37 +94,6 @@ export default {
 
   methods: {
     ...mapMutations(["setComprador", "setVendedor"]),
-    resetPersona() {
-      if (this.vendedor) {
-        this.setVendedor(this.personaDefault);
-      } else {
-        this.setComprador(this.personaDefault);
-      }
-    },
-    isValid() {
-      if (!this.model) {
-        return false;
-      }
-      return true;
-    },
-  },
-
-  watch: {
-    model(val) {
-      if (val == null || val == undefined) {
-        this.personaDefault.nombreCompleto = null;
-        this.resetPersona();
-      } else if (typeof val == "string") {
-        this.personaDefault.nombreCompleto = val;
-        val = this.personaDefault;
-        console.log(
-          "guardar nueva persona{nombre:" +
-            this.personaDefault.nombreCompleto +
-            ", }"
-        );
-        this.resetPersona();
-      }
-    },
   },
 };
 </script>

@@ -1,8 +1,37 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
+function isPersonaValid(persona) {
+
+  if (persona) {
+    if (persona.sexo && persona.nombreCompleto && persona.dui && persona.domicilio &&
+      persona.sexo != '' && persona.nombreCompleto != '' && persona.dui != '' && persona.domicilio != '') {
+      console.log("isValid = true");
+      return true
+    }
+  }
+  console.log("isValid = false");
+  return false
+}
+
+const personaDefault = {
+  nombreCompleto: null,
+  dui: null,
+  sexo: null,
+  domicilio: {
+    nombre: "",
+    departamento: {
+      nombre: "",
+    },
+  },
+  isValid: false,
+};
 
 Vue.use(Vuex)
-
 export default new Vuex.Store({
   state: {
     personas: [
@@ -13,9 +42,9 @@ export default new Vuex.Store({
         domicilio: {
           nombre: "El Porvenir",
           departamento: {
-            nombre: "Santa Ana",
-          },
-        },
+            nombre: "Santa Ana"
+          }
+        }
       },
       {
         nombreCompleto: "LUIS MANUEL GRANADINO LEON",
@@ -24,9 +53,9 @@ export default new Vuex.Store({
         domicilio: {
           nombre: "Santiago de la Frontera",
           departamento: {
-            nombre: "Santa Ana",
-          },
-        },
+            nombre: "Santa Ana"
+          }
+        }
       },
     ],
     municipios: [
@@ -38,28 +67,8 @@ export default new Vuex.Store({
       { nombre: "Concepcion de Ataco", departamento: { nombre: "Ahuachapan" } },
     ],
     cv: {
-      vendedor: {
-        nombreCompleto: "",
-        dui: "",
-        sexo: null,
-        domicilio: {
-          nombre: "",
-          departamento: {
-            nombre: "",
-          },
-        },
-      },
-      comprador: {
-        nombreCompleto: "",
-        dui: "",
-        sexo: null,
-        domicilio: {
-          nombre: "",
-          departamento: {
-            nombre: "",
-          },
-        },
-      },
+      vendedor: personaDefault,
+      comprador: personaDefault,
       semoviente: {
         valor: 1800,
         cantidad: 1,
@@ -69,17 +78,57 @@ export default new Vuex.Store({
       },
       fecha: "25/12/2022",
     },
+    isConnected: false,
 
   },
   mutations: {
     setVendedor(state, persona) {
+      persona.isValid = isPersonaValid(persona);
       state.cv.vendedor = persona;
     },
     setComprador(state, persona) {
+      persona.isValid = isPersonaValid(persona);
       state.cv.comprador = persona;
+    },
+    setConnectedStatus(state, status) {
+      state.isConnected = status;
+    },
+    setPersonas(state, personas) {
+      state.personas = personas;
+    },
+    setMunicipios(state, municipios) {
+      state.municipios = municipios;
     },
   },
   actions: {
+    async testConnection({ commit }) {
+      const res = await axios.get('/');
+      if (res.data) {
+        commit('setConnectedStatus', true);
+      } else {
+        commit('setConnectedStatus', false);
+      }
+    },
+    print() {
+      console.log("imprimiendo...");
+    },
+    async getPersonas({ commit }) {
+      const res = await axios.get('/personas');
+      if (res.statusText == 'OK') {
+        commit('setPersonas', res.data);
+      } else {
+        commit('setPersonas', []);
+      }
+    },
+    async getMunicipios({ commit }) {
+      const res = await axios.get('/municipios');
+
+      if (res.statusText == 'OK') {
+        commit('setMunicipios', res.data);
+      } else {
+        commit('setMunicipios', []);
+      }
+    }
   },
   modules: {
   },
@@ -87,14 +136,8 @@ export default new Vuex.Store({
     nuevoVendedor: state => state.cv.vendedor,
     nuevoComprador: state => state.cv.comprador,
     cv: state => state.cv,
-    valid: state => {
-      if (!state.cv.vendedor) {
-        return false;
-      }
-      if (!state.cv.comprador) {
-        return false;
-      }
-      return true
-    },
+    personaDefault: () => personaDefault,
+    valid: state => state.cv.comprador.isValid && state.cv.vendedor.isValid,
+    isConnected: state => state.isConnected
   }
 })

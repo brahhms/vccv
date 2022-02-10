@@ -1,0 +1,2360 @@
+[
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Ahuachapán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Apaneca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Atiquizaya"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Concepción de Ataco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "El Refugio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Guaymango"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Jujutla"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "San Francisco Menéndez"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "San Lorenzo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "San Pedro Puxtla"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Tacuba"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e264"
+            },
+            "nombre": "Ahuachapán"
+        },
+        "nombre": "Turin"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Candelaria de La Frontera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Coatepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Chalchuapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "El Congo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "El Porvenir"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Masahuat"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Metapán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "San Antonio Pajonal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "San Sebastián Salitrillo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Santa Ana"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Santa Rosa Guachipilin"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Santiago de La Frontera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e265"
+            },
+            "nombre": "Santa Ana"
+        },
+        "nombre": "Texistepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Acajutla"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Armenia"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Caluco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Cuisnahuat"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Santa Isabel Ishuatán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Izalco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Juayua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Nahuizalco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Nahuilingo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Salcoatitán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "San Antonio del Monte"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "San Julián"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Santa Catarina Masahuat"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Santo Domingo de Guzmán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Sonsonate"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e266"
+            },
+            "nombre": "Sonsonate"
+        },
+        "nombre": "Sonzacate"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Agua Caliente"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Arcatao"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Azacualpa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Citalá"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Comalapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Concepción Quezaltepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Chalatenango"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Dulce Nombre de María"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "El Carrizal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "El Paraiso"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "La Laguna"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "La Palma"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "La Reina"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Las Vueltas"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Nombre de Jesús"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Nueva Concepción"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Nueva Trinidad"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Ojos de Agua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Potonico"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Antonio de La Cruz"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Antonio Los Ranchos"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Fernando"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Francisco Lempa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Francisco Morazán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Ignacio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Isidro Labrador"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Cancasque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Las Flores"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Luis del Carmen"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Miguel de Mercedes"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "San Rafael"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Santa Rita"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e267"
+            },
+            "nombre": "Chalatenango"
+        },
+        "nombre": "Tejutla"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Antiguo Cuscatlán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Ciudad Arce"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Colón"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Comasagua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Chiltiupán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Huizúcar"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Jayaque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Jicalapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "La Libertad"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Nuevo Cuscatlán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Santa Tecla"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Quezaltepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Sacacoyo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "San José Villanueva"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "San Juan Opico"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "San Matías"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "San Pablo Tacachico"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Tamanique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Talnique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Teotepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Tepecoyo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e268"
+            },
+            "nombre": "La Libertad"
+        },
+        "nombre": "Zaragoza"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Aguilares"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Apopa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Ayutuxtepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Cuscatancingo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "El Paisnal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Guazapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Ilopango"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Mejicanos"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Nejapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Panchimalco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Rosario de Mora"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "San Marcos"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "San Martín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "San Salvador"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Santiago Texacuangos"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Santo Tomás"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Soyapango"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Tonacatepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e269"
+            },
+            "nombre": "San Salvador"
+        },
+        "nombre": "Delgado"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Candelaria"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Cojutepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "El Carmen"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "El Rosario"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Monte San Juan"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Oratorio de Concepción"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San Bartolome Perulapía"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San Cristóbal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San José Guayabal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San Pedro Perulapán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San Rafael Cedros"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "San Ramón"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Santa Cruz Analquito"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Santa Cruz Michapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Suchitoto"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26a"
+            },
+            "nombre": "Cuscatlán"
+        },
+        "nombre": "Tenancíngo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Cuyultitán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "El Rosario"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Jerusalén"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Mercedes de La Ceiba"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Olocuilta"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Paraíso de Osorio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Antonio Masahuat"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Emigdio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Francisco Chinaméca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Juan Nonualco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Juan Talpa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Juan Tepezontes"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Luis Talpa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Miguel Tepezontes"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Pedro Masahuat"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Pedro Nonualco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Rafael Obrajuelo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Santa María Ostuma"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Santiago Nonualco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Tapalhuaca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "Zacatecolúca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26b"
+            },
+            "nombre": "La Paz"
+        },
+        "nombre": "San Luis de La Herradura"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Cinquera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Guacotecti"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Ilobásco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Jutiapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "San Isidro"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Sensuntepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Tejutepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Victoria"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26c"
+            },
+            "nombre": "Cabañas"
+        },
+        "nombre": "Dolores"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Apastepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Guadalupe"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Cayetano Istepeque"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Santa Clara"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Santo Domingo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Esteban Catarina"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Ildefonso"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Lorenzo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Sebastián"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "San Vicente"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Tecoluca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Tepetitán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26d"
+            },
+            "nombre": "San Vicente"
+        },
+        "nombre": "Verapaz"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Alegría"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Berlín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "California"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Concepción Batres"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "El Triunfo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Ereguayquín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Estanzuelas"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Jiquilisco"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Jucuapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Jucuarán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Mercedes Umana"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Nueva Granada"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Ozatlán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Puerto El Triunfo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "San Agustín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "San Buenaventura"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "San Dionisio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Santa Elena"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "San Francisco Javier"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Santa María"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Santiago de María"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Tecapán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26e"
+            },
+            "nombre": "Usulután"
+        },
+        "nombre": "Usulután"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Carolina"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Ciudad Barrios"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Comacarán"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Chapeltique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Chinameca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Chirilagua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "El Tránsito"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Lolotique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Moncagua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Nueva Guadalupe"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Nuevo Edén de San Juan"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Quelepa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Antonio"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Gerardo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Jorge"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Luis de La Reina"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Miguel"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "San Rafael Oriente"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Sesori"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e26f"
+            },
+            "nombre": "San Miguel"
+        },
+        "nombre": "Uluazapa"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Arambala"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Cacaopera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Corinto"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Chilanga"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Delicias de Concepción"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "El Divisadero"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "El Rosario"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Gualococti"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Guatajiagua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Joateca"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Jocoaitique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Jocoro"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Lolotiquillo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Meanguera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Osicala"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Perquín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "San Carlos"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "San Fernando"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "San Francisco Gotera"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "San Isidro"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "San Simón"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Sensembra"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Sociedad"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Torola"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Yamabal"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e270"
+            },
+            "nombre": "Morazán"
+        },
+        "nombre": "Yoloaiquín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Anamorós"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Bolívar"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Concepción de Oriente"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Conchagua"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "El Carmen"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "El Sauce"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Intipucá"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Laión"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Lislique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Nueva Esparta"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Pasaquina"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Polorós"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "San Alejo"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "San José"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Santa Rosa de Lima"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Yayantique"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Yucuaiquín"
+    },
+    {
+        "municipio": {
+            "_id": {
+                "$oid": "6203cd7a556b7b70a180e271"
+            },
+            "nombre": "La Unión"
+        },
+        "nombre": "Meanguera del Golfo"
+    }
+]

@@ -18,7 +18,13 @@
               <form-persona vendedor rol="Vendedor"></form-persona>
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="nextStep(1)"> Continuar </v-btn>
+                <v-btn
+                  :disabled="!cv.vendedor.isValid"
+                  color="primary"
+                  @click="nextStep(1)"
+                >
+                  Continuar
+                </v-btn>
               </v-row>
             </v-sheet>
           </v-stepper-content>
@@ -29,7 +35,13 @@
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
                 <v-btn text @click="nextStep(3)"> Regresar </v-btn>
-                <v-btn color="primary" @click="nextStep(2)"> Continuar </v-btn>
+                <v-btn
+                  :disabled="!cv.comprador.isValid"
+                  color="primary"
+                  @click="nextStep(2)"
+                >
+                  Continuar
+                </v-btn>
               </v-row>
             </v-sheet>
           </v-stepper-content>
@@ -37,21 +49,20 @@
           <v-stepper-content step="3">
             <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
               <v-form ref="form">
-
                 <v-text-field
-                  v-model="cv.semoviente.cantidad"
+                  v-model.number="cv.semoviente.cantidad"
                   label="Cantidad"
                   required
                 ></v-text-field>
 
                 <v-text-field
-                  v-model="cv.semoviente.valor"
+                  v-model.number="cv.semoviente.valor"
                   label="Valor"
                   required
                 ></v-text-field>
 
                 <v-textarea
-                rows="4"
+                  rows="4"
                   v-model="cv.semoviente.descripcion"
                   label="Descripcion"
                 ></v-textarea>
@@ -61,7 +72,7 @@
                   label="Fierro"
                   v-model="cv.semoviente.img"
                   accept="image/*"
-                  capture="camera" 
+                  capture="camera"
                   @change="onFileChange"
                 ></v-file-input>
               </v-form>
@@ -82,6 +93,7 @@
                 elevation="5"
                 class="px-3 contenedor"
                 color="#FFFDF7"
+                v-if="valid"
               >
                 <div class="encabezado">
                   <v-row>
@@ -161,8 +173,9 @@
                         }}
                       </b>
                       <br />
-                      semoviente<span v-if="cv.semoviente.cantidad > 1">s</span> que
-                      esta<span v-if="cv.semoviente.cantidad > 1">n</span> herrado________venteado______con el
+                      semoviente<span v-if="cv.semoviente.cantidad > 1">s</span>
+                      que esta<span v-if="cv.semoviente.cantidad > 1">n</span>
+                      herrado________venteado______con el
                       <br />
                       fierro Del Ant._______ No.____0000014245.-
                       <br />
@@ -175,14 +188,14 @@
                 <div class="pie-pagina">
                   <v-row>
                     <v-col>
-                      <div class="fierro">
+                      <div class="fierro-container">
                         FIGURA DEL FIERRO
                         <v-img
                           alt="Logo gobierno"
+                          class="fierro-img"
                           contain
-                          src="cv.semoviente.img"
+                          :src="img"
                           transition="scale-transition"
-                          width="30%"
                         ></v-img>
                       </div>
                       Para seguridad del comprador, se le extiende la presente
@@ -205,7 +218,7 @@
               <v-row class="mt-4 pr-8">
                 <v-spacer></v-spacer>
                 <v-btn text @click="nextStep(4)"> Regresar </v-btn>
-                <v-btn color="primary" @click="nextStep(4)"> OK </v-btn>
+                <v-btn color="primary" @click="imprimir()"> Imprimir </v-btn>
               </v-row>
             </v-card>
           </v-stepper-content>
@@ -219,7 +232,7 @@
 <script>
 import numeros from "../store/numeros.js";
 import FormPersona from "../components/FormPersona";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   components: {
@@ -228,6 +241,7 @@ export default {
   data: () => ({
     e1: 1,
     steps: 2,
+    img: "",
   }),
   watch: {
     steps(val) {
@@ -235,54 +249,37 @@ export default {
         this.e1 = val;
       }
     },
-    "cv.vendedor"(val) {
-      if (val == null || val == undefined) {
-        this.personaDefault.nombreCompleto = null;
-        val = this.personaDefault;
-        this.cv.vendedor = val;
-      } else if (typeof val == "string") {
-        this.personaDefault.nombreCompleto = val;
-        val = this.personaDefault;
-        console.log(
-          "guardar nueva persona{nombre:" +
-            this.personaDefault.nombreCompleto +
-            ", }"
-        );
-        this.cv.vendedor = val;
-      }
-    },
-    "cv.comprador"(val) {
-      if (val == null || val == undefined) {
-        this.personaDefault.nombreCompleto = null;
-        val = this.personaDefault;
-        this.cv.comprador = val;
-      } else if (typeof val == "string") {
-        this.personaDefault.nombreCompleto = val;
-        val = this.personaDefault;
-        console.log(
-          "guardar nueva persona{nombre:" +
-            this.personaDefault.nombreCompleto +
-            ", }"
-        );
-        this.cv.comprador = val;
-      }
-    },
   },
 
   computed: {
-    ...mapGetters(["cv"]),
+    ...mapGetters(["cv", "valid"]),
     monto() {
       return numeros.aLetras(this.cv.semoviente.valor);
     },
   },
 
   methods: {
+    ...mapActions(["print"]),
     nextStep(n) {
       if (n === 4) {
         this.e1 = 1;
       } else {
         this.e1 = n + 1;
       }
+    },
+
+    onFileChange() {
+      let reader = new window.FileReader();
+      reader.readAsDataURL(this.cv.semoviente.img);
+      reader.onload = () => {
+        let imageDataUrl = reader.result;
+        this.img = imageDataUrl;
+      };
+    },
+
+    imprimir() {
+      // window.print();
+      this.print();
     },
   },
 };
@@ -296,7 +293,7 @@ export default {
   margin-top: 50px;
 }
 
-.fierro {
+.fierro-container {
   text-align: center;
   margin: 0 auto;
   border-style: solid;
@@ -304,6 +301,14 @@ export default {
 
   height: 110px;
   width: 360px;
+}
+
+.fierro-img {
+  margin: 0 auto;
+  background-color: antiquewhite;
+
+  width: 160px;
+  height: 80px;
 }
 
 .contenedor {
@@ -357,9 +362,14 @@ export default {
 }
 
 @media only screen and (max-width: 670px) {
-  .fierro {
+  .fierro-container {
     height: 70px;
     width: 180px;
+  }
+
+  .fierro-img {
+    width: 70px;
+    height: 50px;
   }
 
   .firma {
@@ -379,7 +389,7 @@ export default {
 
   .encabezado {
     font-size: 8px !important;
-      padding-left: 22px;
+    padding-left: 22px;
   }
 
   .container {
