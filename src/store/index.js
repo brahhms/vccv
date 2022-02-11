@@ -5,19 +5,6 @@ import axios from 'axios'
 axios.defaults.baseURL = 'http://localhost:3000';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-function isPersonaValid(persona) {
-
-  if (persona) {
-    if (persona.sexo && persona.nombreCompleto && persona.dui && persona.domicilio &&
-      persona.sexo != '' && persona.nombreCompleto != '' && persona.dui != '' && persona.domicilio != '') {
-      console.log("isValid = true");
-      return true
-    }
-  }
-  console.log("isValid = false");
-  return false
-}
-
 const personaDefault = {
   nombreCompleto: null,
   dui: null,
@@ -30,6 +17,19 @@ const personaDefault = {
   },
   isValid: false,
 };
+
+function isPersonaValid(persona) {
+  if (persona) {
+    if (persona.sexo && persona.nombreCompleto && persona.dui && persona.domicilio &&
+      persona.sexo != '' && persona.nombreCompleto != '' && persona.dui != '' && persona.domicilio != '') {
+      return true
+    } else {
+      return false
+    }
+  } else {
+    return false
+  }
+}
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -80,14 +80,32 @@ export default new Vuex.Store({
     },
     isConnected: false,
 
+    step: 1
   },
   mutations: {
+    validar(state) {
+      state.cv.vendedor.isValid = isPersonaValid(state.cv.vendedor);
+      state.cv.comprador.isValid = isPersonaValid(state.cv.comprador);
+    },
+    nextStep(state) {
+      if (state.step > 4) {
+        state.step = 1;
+      } else {
+        state.step++;
+      }
+    },
+    prevStep(state) {
+      if (state.step > 1) {
+        state.step--;
+      }
+    },
+    setStep(state, step) {
+      state.step = step;
+    },
     setVendedor(state, persona) {
-      persona.isValid = isPersonaValid(persona);
       state.cv.vendedor = persona;
     },
     setComprador(state, persona) {
-      persona.isValid = isPersonaValid(persona);
       state.cv.comprador = persona;
     },
     setConnectedStatus(state, status) {
@@ -109,9 +127,39 @@ export default new Vuex.Store({
         commit('setConnectedStatus', false);
       }
     },
-    print() {
+    async print() {
       console.log("imprimiendo...");
     },
+
+    async savePersona({
+      state
+    }) {
+
+      if (state.cv.vendedor._id == undefined) {
+        const nuevo = { ...state.cv.vendedor };
+        nuevo.isValid = undefined;
+        console.log(nuevo);
+
+        let res = await axios.post('/savePersona', nuevo);
+        if (res.data.ok) {
+          console.log("ok");
+        }
+      }
+      if (state.cv.comprador._id == undefined) {
+        const nuevo = { ...state.cv.comprador };
+        
+        nuevo.isValid = undefined;
+        console.log(nuevo);
+
+        let res = await axios.post('/savePersona', nuevo);
+        if (res.data.ok) {
+          console.log("ok");
+        }
+      }
+
+    },
+
+
     async getPersonas({ commit }) {
       const res = await axios.get('/personas');
       if (res.statusText == 'OK') {
@@ -137,7 +185,8 @@ export default new Vuex.Store({
     nuevoComprador: state => state.cv.comprador,
     cv: state => state.cv,
     personaDefault: () => personaDefault,
-    valid: state => state.cv.comprador.isValid && state.cv.vendedor.isValid,
-    isConnected: state => state.isConnected
+
+    isConnected: state => state.isConnected,
+    step: state => state.step
   }
 })

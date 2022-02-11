@@ -9,41 +9,21 @@
           <v-divider></v-divider>
           <v-stepper-step step="3" editable> Semoviente </v-stepper-step>
           <v-divider></v-divider>
-          <v-stepper-step step="4" editable> Certificado </v-stepper-step>
+          <v-stepper-step
+            step="4"
+            :editable="cv.comprador.isValid && cv.vendedor.isValid"
+          >
+            Certificado
+          </v-stepper-step>
         </v-stepper-header>
 
         <v-stepper-items>
           <v-stepper-content step="1">
-            <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
-              <form-persona vendedor rol="Vendedor"></form-persona>
-              <v-row class="mt-6">
-                <v-spacer></v-spacer>
-                <v-btn
-                  :disabled="!cv.vendedor.isValid"
-                  color="primary"
-                  @click="nextStep(1)"
-                >
-                  Continuar
-                </v-btn>
-              </v-row>
-            </v-sheet>
+            <form-persona vendedor rol="Vendedor"></form-persona>
           </v-stepper-content>
 
           <v-stepper-content step="2">
-            <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
-              <form-persona comprador rol="Comprador"></form-persona>
-              <v-row class="mt-6">
-                <v-spacer></v-spacer>
-                <v-btn text @click="nextStep(3)"> Regresar </v-btn>
-                <v-btn
-                  :disabled="!cv.comprador.isValid"
-                  color="primary"
-                  @click="nextStep(2)"
-                >
-                  Continuar
-                </v-btn>
-              </v-row>
-            </v-sheet>
+            <form-persona comprador rol="Comprador"></form-persona>
           </v-stepper-content>
 
           <v-stepper-content step="3">
@@ -79,8 +59,8 @@
 
               <v-row class="mt-6">
                 <v-spacer></v-spacer>
-                <v-btn text> Regresar </v-btn>
-                <v-btn color="primary" @click="nextStep(3)"> Continuar </v-btn>
+                <v-btn text @click="prevStep()"> Regresar </v-btn>
+                <v-btn color="primary" @click="nextStep()"> Continuar </v-btn>
               </v-row>
             </v-sheet>
           </v-stepper-content>
@@ -93,7 +73,7 @@
                 elevation="5"
                 class="px-3 contenedor"
                 color="#FFFDF7"
-                v-if="valid"
+                v-if="cv.comprador.isValid && cv.vendedor.isValid"
               >
                 <div class="encabezado">
                   <v-row>
@@ -217,7 +197,7 @@
               </v-sheet>
               <v-row class="mt-4 pr-8">
                 <v-spacer></v-spacer>
-                <v-btn text @click="nextStep(4)"> Regresar </v-btn>
+                <v-btn text @click="prevStep()"> Regresar </v-btn>
                 <v-btn color="primary" @click="imprimir()"> Imprimir </v-btn>
               </v-row>
             </v-card>
@@ -232,41 +212,35 @@
 <script>
 import numeros from "../store/numeros.js";
 import FormPersona from "../components/FormPersona";
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
     FormPersona,
   },
   data: () => ({
-    e1: 1,
-    steps: 2,
     img: "",
   }),
-  watch: {
-    steps(val) {
-      if (this.e1 > val) {
-        this.e1 = val;
-      }
-    },
-  },
 
   computed: {
-    ...mapGetters(["cv", "valid"]),
+    ...mapGetters(["cv", "step"]),
     monto() {
       return numeros.aLetras(this.cv.semoviente.valor);
+    },
+    e1: {
+      set(step) {
+        this.setStep(step);
+        return step;
+      },
+      get() {
+        return this.step;
+      },
     },
   },
 
   methods: {
-    ...mapActions(["print"]),
-    nextStep(n) {
-      if (n === 4) {
-        this.e1 = 1;
-      } else {
-        this.e1 = n + 1;
-      }
-    },
+    ...mapMutations(["setStep", "prevStep", "nextStep"]),
+    ...mapActions(["print","savePersona"]),
 
     onFileChange() {
       let reader = new window.FileReader();
@@ -280,6 +254,7 @@ export default {
     imprimir() {
       // window.print();
       this.print();
+      this.savePersona();
     },
   },
 };
