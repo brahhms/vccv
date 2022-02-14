@@ -16,6 +16,7 @@ const personaDefault = {
     },
   },
   isValid: false,
+  isEdited: false
 };
 
 function isPersonaValid(persona) {
@@ -26,10 +27,24 @@ function isPersonaValid(persona) {
     } else {
       return false
     }
+
   } else {
     return false
   }
 }
+
+function isPersonaEdited(persona, personas) {
+  if (persona) {
+    const result = personas.filter(obj => obj._id === persona._id)[0];
+    if (result) {
+      if (persona.nombreCompleto !== result.nombreCompleto || persona.dui !== result.dui) {
+        return true
+      }
+    }
+  }
+  return false
+}
+
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -85,7 +100,11 @@ export default new Vuex.Store({
   mutations: {
     validar(state) {
       state.cv.vendedor.isValid = isPersonaValid(state.cv.vendedor);
+      state.cv.vendedor.isEdited = isPersonaEdited(state.cv.vendedor, state.personas);
+
       state.cv.comprador.isValid = isPersonaValid(state.cv.comprador);
+      state.cv.comprador.isEdited = isPersonaEdited(state.cv.comprador, state.personas);
+
     },
     nextStep(state) {
       if (state.step > 4) {
@@ -135,25 +154,46 @@ export default new Vuex.Store({
       state
     }) {
 
+      let nuevo = { ...state.cv.vendedor };
+      nuevo.isValid = undefined;
+      nuevo.isEdited = undefined;
+
       if (state.cv.vendedor._id == undefined) {
-        const nuevo = { ...state.cv.vendedor };
-        nuevo.isValid = undefined;
-        console.log(nuevo);
 
         let res = await axios.post('/savePersona', nuevo);
         if (res.data.ok) {
+          location.reload();
           console.log("ok");
         }
+      } else {
+        if (state.cv.vendedor.isEdited) {
+          let res = await axios.put('/updatePersona', nuevo);
+          if (res.data.ok) {
+            location.reload();
+            console.log("ok");
+          }
+        }
       }
-      if (state.cv.comprador._id == undefined) {
-        const nuevo = { ...state.cv.comprador };
-        
-        nuevo.isValid = undefined;
-        console.log(nuevo);
 
+      nuevo = { ...state.cv.comprador };
+      nuevo.isValid = undefined;
+      nuevo.isEdited = undefined;
+
+      if (state.cv.comprador._id == undefined) {
+        console.log(nuevo);
         let res = await axios.post('/savePersona', nuevo);
         if (res.data.ok) {
+          location.reload();
           console.log("ok");
+        }
+      } else {
+        if (state.cv.comprador.isEdited) {
+          console.log(nuevo);
+        let res = await axios.put('/updatePersona', nuevo);
+        if (res.data.ok) {
+          location.reload();
+          console.log("ok");
+        }
         }
       }
 
@@ -162,6 +202,15 @@ export default new Vuex.Store({
 
     async getPersonas({ commit }) {
       const res = await axios.get('/personas');
+      if (res.statusText == 'OK') {
+        commit('setPersonas', res.data);
+      } else {
+        commit('setPersonas', []);
+      }
+    },
+    async searchPersonas({ commit }, v) {
+      const res = await axios.get('/personas?q=' + v);
+      console.log(v);
       if (res.statusText == 'OK') {
         commit('setPersonas', res.data);
       } else {
@@ -190,3 +239,4 @@ export default new Vuex.Store({
     step: state => state.step
   }
 })
+

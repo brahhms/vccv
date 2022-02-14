@@ -6,7 +6,10 @@
 
       <v-combobox
         v-model="model"
+        :loading="loading"
         :items="personas"
+        :search-input.sync="search"
+        cache-items
         item-text="nombreCompleto"
         required
         :rules="nameRules"
@@ -61,7 +64,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 export default {
   name: "FormPersona",
   props: {
@@ -72,12 +75,14 @@ export default {
   data: () => ({
     nameRules: [(v) => !!v || "Name is required"],
     duiRules: (value) => {
-      const pattern = '^[0-9]{8}-[0-9]{1}';
+      const pattern = "^[0-9]{8}-[0-9]{1}";
       return pattern.test(value) || "Invalid e-mail.";
     },
+    loading: false,
+    search: null,
   }),
   computed: {
-    ...mapState(["personas", "municipios"]),
+    ...mapState(["municipios", "personas"]),
     ...mapGetters(["nuevoComprador", "nuevoVendedor", "personaDefault"]),
     model: {
       set(persona) {
@@ -117,6 +122,14 @@ export default {
       "nextStep",
       "prevStep",
     ]),
+    ...mapActions(["searchPersonas"]),
+
+    async querySelections(v) {
+      this.loading = true;
+
+      await this.searchPersonas(v);
+      this.loading = false;
+    },
   },
 
   watch: {
@@ -127,6 +140,14 @@ export default {
         this.validar();
       },
     },
+    search(val) {
+      val && val !== this.select && this.querySelections(val);
+    },
   },
+
+mounted(){
+
+}
+
 };
 </script>
