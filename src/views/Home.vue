@@ -27,7 +27,7 @@
           </v-stepper-content>
 
           <v-stepper-content step="3">
-            <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
+            <v-sheet min-height="85vh" rounded="lg" class="px-6 pt-8">
               <v-form ref="form">
                 <v-text-field
                   v-model.number="cv.semoviente.cantidad"
@@ -58,9 +58,15 @@
               </v-form>
 
               <v-row class="mt-6">
+                <v-col>
+                  <v-btn block large text @click="prevStep()"> Regresar </v-btn>
+                </v-col>
                 <v-spacer></v-spacer>
-                <v-btn text @click="prevStep()"> Regresar </v-btn>
-                <v-btn color="primary" @click="nextStep()"> Continuar </v-btn>
+                <v-col>
+                  <v-btn block large color="primary" @click="nextStep()">
+                    Continuar
+                  </v-btn>
+                </v-col>
               </v-row>
             </v-sheet>
           </v-stepper-content>
@@ -68,8 +74,6 @@
           <v-stepper-content step="4">
             <v-card class="py-2" min-height="80vh">
               <v-sheet
-                height="764"
-                width="590"
                 elevation="5"
                 class="px-3 contenedor"
                 color="#FFFDF7"
@@ -240,7 +244,7 @@ export default {
 
   methods: {
     ...mapMutations(["setStep", "prevStep", "nextStep"]),
-    ...mapActions(["print","savePersona"]),
+    ...mapActions(["print", "savePersona"]),
 
     onFileChange() {
       let reader = new window.FileReader();
@@ -252,9 +256,9 @@ export default {
     },
 
     imprimir() {
-      // window.print();
-      this.print();
-      this.savePersona();
+      window.print();
+      //this.print();
+      //this.savePersona();
     },
   },
 };
@@ -290,9 +294,11 @@ export default {
   display: grid;
   margin: 0px auto;
   border-radius: 0px !important;
+  height: 279.4mm !important;
+  width: 215.9mm !important;
 
   grid-template-columns: 2fr 10fr;
-  grid-template-rows: 80px 175px 175px 280px;
+  grid-template-rows: 100px 175px 175px 280px;
   padding: 10px;
   font-size: 12px;
 }
@@ -377,6 +383,25 @@ export default {
 
   .sello {
     font-size: 5px !important;
+  }
+}
+
+@media print {
+  @page {
+    size: letter portrait !important;
+    margin: 0 !important;
+  }
+
+  .contenedor {
+    height: 279.4mm !important;
+    width: 215.9mm !important;
+
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    print-color-adjust: exact;
   }
 }
 </style>

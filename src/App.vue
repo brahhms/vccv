@@ -20,14 +20,13 @@ export default {
 
   data: () => ({}),
   methods: {
-    ...mapActions(["testConnection","getPersonas","getMunicipios"])
+    ...mapActions(["testConnection", "getPersonas", "getMunicipios"]),
   },
-  computed:{
+  computed: {
     ...mapGetters(["isConnected"]),
   },
-  async mounted(){
+  async mounted() {
     await this.testConnection();
-    this.getPersonas();
     this.getMunicipios();
   },
 };

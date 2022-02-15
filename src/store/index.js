@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = 'http://192.168.1.52:3000';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 const personaDefault = {
@@ -37,11 +37,13 @@ function isPersonaEdited(persona, personas) {
   if (persona) {
     const result = personas.filter(obj => obj._id === persona._id)[0];
     if (result) {
-      if (persona.nombreCompleto !== result.nombreCompleto || persona.dui !== result.dui) {
+      if (persona.nombreCompleto != result.nombreCompleto || persona.dui != result.dui || persona.domicilio._id != result.domicilio._id) {
+        console.log(persona.nombreCompleto + ' was edited');
         return true
       }
     }
   }
+  console.log(persona.nombreCompleto + ' was not edited');
   return false
 }
 
@@ -49,30 +51,7 @@ function isPersonaEdited(persona, personas) {
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
-    personas: [
-      {
-        nombreCompleto: "JUAN ANTONIO GUEVARA MARTINEZ",
-        dui: "00176095-4",
-        sexo: "M",
-        domicilio: {
-          nombre: "El Porvenir",
-          departamento: {
-            nombre: "Santa Ana"
-          }
-        }
-      },
-      {
-        nombreCompleto: "LUIS MANUEL GRANADINO LEON",
-        dui: "06011251-6",
-        sexo: "M",
-        domicilio: {
-          nombre: "Santiago de la Frontera",
-          departamento: {
-            nombre: "Santa Ana"
-          }
-        }
-      },
-    ],
+    personas: [],
     municipios: [
       { nombre: "El Porvenir", departamento: { nombre: "Santa Ana" } },
       {
@@ -165,13 +144,11 @@ export default new Vuex.Store({
           location.reload();
           console.log("ok");
         }
-      } else {
-        if (state.cv.vendedor.isEdited) {
-          let res = await axios.put('/updatePersona', nuevo);
-          if (res.data.ok) {
-            location.reload();
-            console.log("ok");
-          }
+      } else if (state.cv.vendedor.isEdited) {
+        let res = await axios.put('/updatePersona', nuevo);
+        if (res.data.ok) {
+          location.reload();
+          console.log("ok");
         }
       }
 
@@ -186,16 +163,15 @@ export default new Vuex.Store({
           location.reload();
           console.log("ok");
         }
-      } else {
-        if (state.cv.comprador.isEdited) {
-          console.log(nuevo);
+      } else if (state.cv.comprador.isEdited) {
+        console.log(nuevo);
         let res = await axios.put('/updatePersona', nuevo);
         if (res.data.ok) {
           location.reload();
           console.log("ok");
         }
-        }
       }
+
 
     },
 
@@ -210,7 +186,7 @@ export default new Vuex.Store({
     },
     async searchPersonas({ commit }, v) {
       const res = await axios.get('/personas?q=' + v);
-      console.log(v);
+      console.log('?q=' + v);
       if (res.statusText == 'OK') {
         commit('setPersonas', res.data);
       } else {

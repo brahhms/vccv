@@ -1,5 +1,5 @@
 <template>
-  <v-sheet min-height="80vh" rounded="lg" class="px-6 pt-8">
+  <v-sheet min-height="85vh" rounded="lg" class="px-6 pt-8">
     <v-form ref="form">
       <b v-if="vendedor">Vendedor</b>
       <b v-else>Comprador</b>
@@ -9,7 +9,6 @@
         :loading="loading"
         :items="personas"
         :search-input.sync="search"
-        cache-items
         item-text="nombreCompleto"
         required
         :rules="nameRules"
@@ -18,7 +17,12 @@
       >
       </v-combobox>
 
-      <v-text-field v-model="model.dui" label="DUI" required></v-text-field>
+      <v-text-field
+        :disabled="exist"
+        v-model="model.dui"
+        label="DUI"
+        required
+      ></v-text-field>
 
       <v-autocomplete
         v-model="model.domicilio"
@@ -44,21 +48,28 @@
         disabled
       ></v-text-field>
 
-      <v-radio-group
-        :disabled="model._id != undefined"
-        v-model="model.sexo"
-        column
-      >
+      <v-radio-group :disabled="exist" v-model="model.sexo" column>
         <v-radio label="Masculino" color="blue" value="M"></v-radio>
         <v-radio label="Femenino" color="pink" value="F"></v-radio>
       </v-radio-group>
     </v-form>
-    <v-row class="mt-6">
+    <v-row class="mt-2">
+      <v-col>
+        <v-btn block large text @click="prevStep()"> Regresar </v-btn>
+      </v-col>
+
       <v-spacer></v-spacer>
-      <v-btn text @click="prevStep()"> Regresar </v-btn>
-      <v-btn :disabled="!model.isValid" color="primary" @click="nextStep()">
-        Continuar
-      </v-btn>
+      <v-col>
+        <v-btn
+          block
+          :disabled="!model.isValid"
+          color="primary"
+          @click="nextStep()"
+          large
+        >
+          Continuar
+        </v-btn>
+      </v-col>
     </v-row>
   </v-sheet>
 </template>
@@ -112,6 +123,9 @@ export default {
         }
       },
     },
+    exist() {
+      return typeof this.model._id == "string";
+    },
   },
 
   methods: {
@@ -145,9 +159,6 @@ export default {
     },
   },
 
-mounted(){
-
-}
-
+  mounted() {},
 };
 </script>
